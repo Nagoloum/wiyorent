@@ -92,7 +92,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 3,
       price: "500 000",
       region: "Littoral",
-      imageUrl: "./public/Gallery/4.jpg",
+      imageUrl: "/Gallery/4.jpg",
       description: "A spacious 3-bedroom flat located in the heart of the city.",
     },
     {
@@ -102,7 +102,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 1,
       price: "250 000",
       region: "Centre",
-      imageUrl: "./public/Gallery/2.jpg",
+      imageUrl: "/Gallery/2.jpg",
       description: "A cozy studio apartment perfect for a single occupant or couple.",
     },
     {
@@ -112,7 +112,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 4,
       price: "1 200 000",
       region: "Adamaoua",
-      imageUrl: "./public/Gallery/3.jpg",
+      imageUrl: "/Gallery/3.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
     {
@@ -122,7 +122,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 3,
       price: "50 000",
       region: "Nord-Ouest",
-      imageUrl: "./public/Gallery/1.jpg",
+      imageUrl: "/Gallery/1.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
   ];
