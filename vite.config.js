@@ -8,4 +8,7 @@ export default defineConfig({
     // Pour rediriger toutes les requêtes vers index.html
     historyApiFallback: true,
   },
+  build: {
+    sourcemap: true, // Active la génération des sourcemaps
+  },
 })

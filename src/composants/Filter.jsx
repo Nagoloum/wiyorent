@@ -459,8 +459,6 @@ export default function ApartmentFilterApp() {
                   ))}
                 </div>
               </div>
-
-
             </div>
           </section>
         </main>
