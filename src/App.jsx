@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect, Suspense } from 'react';
 import Spinner from './composants/Spinner';
-
-const Home = React.lazy(() => import('./pages/Home'));
-const List = React.lazy(() => import('./pages/List'));
-const Error = React.lazy(() => import('./pages/Errorpage'));
+import Home from './pages/Home';
+import List from './pages/List';
+import Errorpage from './pages/Errorpage';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -20,24 +19,22 @@ const App = () => {
 
   return (
     <Router>
-      <Suspense fallback={<div>Chargement...</div>}>
-        <div className=''>
-          {loading ? (
-            <Spinner /> // Affiche le spinner pendant le chargement
-          ) : (
-            <div>
-              {/* Contenu de la page ici */}
-              <main>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/list" element={<List />} />
-                  <Route path="*" element={<Error />} /> {/* Route catch-all pour les pages non trouvées */}
-                </Routes>
-              </main>
-            </div>
-          )}
-        </div>
-      </Suspense>
+      <div className=''>
+        {loading ? (
+          <Spinner /> // Affiche le spinner pendant le chargement
+        ) : (
+          <div>
+            {/* Contenu de la page ici */}
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/list" element={<List />} />
+                <Route path="*" element={<Errorpage />} /> {/* Route catch-all pour les pages non trouvées */}
+              </Routes>
+            </main>
+          </div>
+        )}
+      </div>
     </Router>
   );
 };
