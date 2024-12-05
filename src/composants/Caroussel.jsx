@@ -82,7 +82,7 @@ function Caroussel() {
 
     return (
         <div
-            className="max-w-[1700px] h-[800px] mb-5 w-full m-auto py-16 px-4 relative group"
+            className="max-w-[1700px] h-[800px] w-full m-auto pt-16 px-4 relative group"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -93,7 +93,7 @@ function Caroussel() {
                 {/* Overlay for text readability */}
                 <div className="absolute inset-0 rounded-2xl bg-black/35 flex items-center justify-center text-center p-4">
                     <div className="text-white">
-                        <h2 className="text-4xl font-bold">{slides[currentIndex].title}</h2>
+                        <h2 className="text-5xl font-bold">{slides[currentIndex].title}</h2>
                         <p className="mt-2 text-lg">{slides[currentIndex].description}</p>
                         <a
                             href={slides[currentIndex].buttonLink}

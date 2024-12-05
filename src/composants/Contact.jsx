@@ -37,7 +37,7 @@ const Contact = () => {
                 ></rect>
               </svg>
             </div>
-            <h2 className="text-4xl font-bold tracking-tight text-gray-900">
+            <h2 className="text-5xl font-bold tracking-tight text-gray-900">
               Contact Us
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">

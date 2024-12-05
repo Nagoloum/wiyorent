@@ -27,7 +27,7 @@ function Listing() {
   return (
     <section className="py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="font-manrope text-center font-bold text-3xl min-[400px]:text-4xl text-black mb-20 max-lg:text-center">
+        <h2 className="font-manrope text-center font-bold text-3xl min-[400px]:text-5xl text-black mb-20 max-lg:text-center">
           Book Now
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

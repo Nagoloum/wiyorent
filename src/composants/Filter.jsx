@@ -141,27 +141,27 @@ export default function ApartmentFilterApp() {
 
   const filteredApartments = apartments.filter((apartment) => {
     const parsePrice = (price) => parseInt(price.replace(/\s/g, ''), 10); // Supprime les espaces et convertit en entier
-    
+
     const regionMatch = selectedFilters.region.length === 0 || selectedFilters.region.includes(apartment.region);
     const bathroomsMatch = selectedFilters.bathrooms.length === 0 || selectedFilters.bathrooms.includes(apartment.bathrooms.toString());
     const bedroomsMatch = selectedFilters.bedrooms.length === 0 || selectedFilters.bedrooms.includes(apartment.bedrooms.toString());
-    
+
     const price = parsePrice(apartment.price);
-    const priceMatch = selectedFilters.price.length === 0 || 
-      (selectedFilters.price.includes('low') && price < 80000) || 
+    const priceMatch = selectedFilters.price.length === 0 ||
+      (selectedFilters.price.includes('low') && price < 80000) ||
       (selectedFilters.price.includes('high') && price >= 80000);
-  
+
     return regionMatch && bathroomsMatch && bedroomsMatch && priceMatch;
   });
-  
+
 
   const sortedApartments = [...filteredApartments].sort((a, b) => {
     if (!sortOption) return 0;
-  
+
     const parsePrice = (price) => {
       return parseInt(price.replace(/\s/g, '').replace(',', ''), 10); // Supprime les espaces et convertit en entier
     };
-  
+
     switch (sortOption) {
       case 'bathroomsAsc':
         return a.bathrooms - b.bathrooms;
@@ -179,7 +179,7 @@ export default function ApartmentFilterApp() {
         return 0;
     }
   });
-  
+
 
   return (
     <div className="bg-white w-full mt-28">
@@ -283,7 +283,7 @@ export default function ApartmentFilterApp() {
         <main className="mx-auto max-w-full px-4 sm:px-6 lg:px-56">
           {/* Header Section */}
           <div className="flex flex-wrap items-baseline justify-between border-b border-gray-200 pb-6 pt-10">
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Rent Out a Flat</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">Rent Out a Flat</h1>
 
             <div className="flex items-center mt-4 sm:mt-0">
               <Menu as="div" className="relative inline-block text-left">
@@ -393,7 +393,9 @@ export default function ApartmentFilterApp() {
                         />
                       </div>
                       <div className="p-4">
-                        <h3 className="text-lg font-semibold text-gray-900">{apartment.title}</h3>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {apartment.title}
+                        </h3>
                         <p className="text-lg text-gray-700 flex items-center gap-2">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -403,41 +405,42 @@ export default function ApartmentFilterApp() {
                             stroke="#000"
                             className="h-5 w-5"
                           >
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                            />
                           </svg>
                           {apartment.region}
                         </p>
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
-                        <svg className="h-5 w-5" viewBox="0 0 50 50" fill="#000" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M5 10C3.347656 10 2 11.347656 2 13L2 26.8125C3.296875 25.6875 4.9375 24.777344 7 24.0625L7 20C7 17.339844 11.542969 17 15.5 17C19.457031 17 24 17.339844 24 20L24 22C24.335938 21.996094 24.65625 22 25 22C25.34375 22 25.664063 21.996094 26 22L26 20C26 17.339844 30.542969 17 34.5 17C38.457031 17 43 17.339844 43 20L43 24.03125C45.058594 24.742188 46.691406 25.671875 48 26.8125L48 13C48 11.347656 46.652344 10 45 10 Z M 25 24C5.90625 24 -0.015625 27.53125 0 37L50 37C50.015625 27.46875 44.09375 24 25 24 Z M 0 39L0 50L7 50L7 46C7 44.5625 7.5625 44 9 44L41 44C42.4375 44 43 44.5625 43 46L43 50L50 50L50 39Z"/></svg>
                           {apartment.bedrooms} Bedrooms
                         </p>
-
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
-                          <svg className="h-5 w-5" viewBox="0 0 24 24" fill="#000" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
-
-                            <g id="SVGRepo_bgCarrier" stroke-width="0" />
-
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-
-                            <g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M5.38517 2.75C4.48209 2.75 3.75 3.48209 3.75 4.38516V11.25H4.03429C4.04516 11.25 4.05599 11.25 4.06675 11.25C4.07208 11.25 4.07739 11.25 4.08268 11.25L19.9332 11.25C19.944 11.25 19.9548 11.25 19.9657 11.25H22C22.4142 11.25 22.75 11.5858 22.75 12C22.75 12.4142 22.4142 12.75 22 12.75H21.7321C21.7386 12.7949 21.7433 12.8405 21.7463 12.8864C21.7501 12.9442 21.75 13.0066 21.75 13.0668L21.75 13.1047C21.75 13.4799 21.75 13.6998 21.7344 13.9452C21.5925 16.1815 20.384 18.2467 18.6326 19.597C18.6463 19.6186 18.6591 19.6412 18.6708 19.6646L19.6708 21.6646C19.8561 22.0351 19.7059 22.4856 19.3354 22.6708C18.9649 22.8561 18.5144 22.7059 18.3292 22.3354L17.3615 20.4C16.5597 20.8059 15.6878 21.073 14.7809 21.1648C14.5364 21.1896 14.3872 21.1952 14.133 21.2047L14.1263 21.205C13.3861 21.2328 12.6615 21.25 12 21.25C11.3385 21.25 10.6139 21.2328 9.87368 21.205L9.86699 21.2047C9.61278 21.1952 9.46358 21.1896 9.2191 21.1648C8.31222 21.073 7.44028 20.8059 6.63851 20.4L5.67082 22.3354C5.48558 22.7059 5.03507 22.8561 4.66459 22.6708C4.29411 22.4856 4.14394 22.0351 4.32918 21.6646L5.32918 19.6646C5.34089 19.6412 5.35366 19.6186 5.3674 19.597C3.61596 18.2467 2.4075 16.1815 2.26556 13.9452C2.24999 13.6998 2.24999 13.4798 2.25 13.1046L2.25 13.0827C2.25 13.0774 2.25 13.0721 2.24999 13.0668C2.24999 13.0483 2.24998 13.0296 2.25008 13.0108C2.25003 13.0072 2.25 13.0036 2.25 13V12.75H2C1.58579 12.75 1.25 12.4142 1.25 12C1.25 11.5858 1.58579 11.25 2 11.25H2.25V4.38516C2.25 2.65366 3.65366 1.25 5.38517 1.25C6.66715 1.25 7.81998 2.0305 8.29609 3.22079L8.40623 3.49613C9.19952 3.29489 10.0603 3.34152 10.8717 3.68813C11.887 4.12189 12.6258 4.94029 13.0041 5.90053C13.1526 6.27744 12.975 6.70417 12.6029 6.86436L6.64215 9.43044C6.45572 9.51069 6.24473 9.51197 6.05735 9.43396C5.86997 9.35596 5.72221 9.20535 5.6478 9.01651C5.26959 8.05665 5.24692 6.94515 5.66723 5.91014C5.96643 5.17335 6.45214 4.56929 7.04665 4.13607L6.90338 3.77788C6.65506 3.15708 6.05379 2.75 5.38517 2.75ZM4.08268 12.75C4.04261 12.75 4.01877 12.75 4.00076 12.7502C3.98765 12.7504 3.98298 12.7506 3.98281 12.7506C3.98215 12.7506 3.98276 12.7506 3.98281 12.7506C3.85775 12.7587 3.75904 12.8581 3.75057 12.9831C3.75052 12.9843 3.75035 12.9893 3.75022 13.0008C3.75001 13.0188 3.75 13.0426 3.75 13.0827C3.75 13.4853 3.75031 13.6573 3.76255 13.8501C3.94798 16.7718 6.45762 19.3775 9.37024 19.6725C9.5652 19.6922 9.67311 19.6964 9.92999 19.7061C10.658 19.7334 11.3629 19.75 12 19.75C12.6371 19.75 13.342 19.7334 14.07 19.7061C14.3269 19.6964 14.4348 19.6922 14.6298 19.6725C17.5424 19.3775 20.052 16.7718 20.2375 13.8501C20.2497 13.6573 20.25 13.4853 20.25 13.0827C20.25 13.0426 20.25 13.0188 20.2498 13.0008C20.2497 12.9906 20.2495 12.9855 20.2495 12.9837C20.2494 12.9825 20.2494 12.9824 20.2495 12.9837C20.2413 12.8584 20.1415 12.7587 20.0162 12.7505C20.0174 12.7506 20.0177 12.7506 20.0162 12.7505C20.0142 12.7505 20.009 12.7503 19.9992 12.7502C19.9812 12.75 19.9574 12.75 19.9173 12.75H4.08268ZM10.2824 5.06753C9.62506 4.78672 8.91452 4.82579 8.30713 5.12147C7.76827 5.3838 7.31118 5.8486 7.05701 6.47451C6.89349 6.87716 6.83436 7.29656 6.86648 7.70078L11.2476 5.81471C10.9982 5.49339 10.6713 5.2337 10.2824 5.06753Z" fill="#000000" /> </g>
-
-                          </svg>
                           {apartment.bathrooms} Bathrooms
                         </p>
                         <p className="mt-4 text-lg font-bold text-black">
                           {apartment.price} XAF
                         </p>
                       </div>
-                      <div className="absolute bottom-4 right-4">
-                        <a href="#">
+                      <div className="absolute bottom-4 right-4 group">
+                        <a
+                          href="#"
+                          className="relative flex items-center justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
+                        >
+                          <div className="absolute w-16 h-8 border-t-4 border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="h-5 w-5 text-gray-400 cursor-pointer hover:text-gray-800 transition-colors"
+                            className="h-5 w-5 text-gray-400 cursor-pointer group-hover:text-black transition-colors"
                           >
                             <path
                               strokeLinecap="round"
@@ -456,6 +459,7 @@ export default function ApartmentFilterApp() {
                   ))}
                 </div>
               </div>
+
 
             </div>
           </section>

@@ -2,14 +2,18 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section id="about" className="w-full pt-8 px-4">
-      <div className="px-11 mx-auto text-left grid max-w-6xl grid-cols-12 gap-4 p-1">
-        <div className="col-span-12 rounded-lg pt-4">
-          <h2 className="text-4xl font-bold text-center">About Us</h2>
+    <section id="about" className="w-full pb-16 px-4">
+      {/* Section Header */}
+      <div className="px-11 mx-auto text-left grid max-w-6xl grid-cols-12 gap-4 pt-20 sm:pt-40">
+        <div className="col-span-12 rounded-lg">
+          <h2 className="text-5xl font-bold text-center">About Us</h2>
         </div>
       </div>
-      <div className="flex min-h-screen items-center justify-center">
-        <div className="relative flex flex-col lg:flex-row w-full max-w-[72rem] rounded-xl bg-black text-gray-300 shadow-md">
+      
+      {/* Content Section */}
+      <div className="flex items-center justify-center min-h-screen pt-20">
+        <div className="relative flex flex-col lg:flex-row w-full max-w-[72rem] rounded-xl bg-black text-gray-300 shadow-xl">
+          {/* Image Section */}
           <div className="relative w-full lg:w-2/5 shrink-0 overflow-hidden rounded-t-xl lg:rounded-l-xl lg:rounded-r-none">
             <img
               src="/Divine 1.jpg"
@@ -17,14 +21,16 @@ const About = () => {
               className="h-full w-full object-cover rounded-t-xl lg:rounded-l-xl"
             />
           </div>
-          <div className="p-8 flex flex-col justify-center">
-            <h6 className="mb-4 font-sans text-lg font-bold leading-relaxed tracking-wide text-white">
+          
+          {/* Text Section */}
+          <div className="p-8 flex flex-col justify-center gap-6">
+            <h6 className="font-sans text-lg font-bold leading-relaxed tracking-wide text-white">
               WiyoRent
             </h6>
-            <h4 className="mb-4 font-sans text-3xl font-extrabold leading-snug tracking-wide text-yellow-500">
+            <h4 className="font-sans text-3xl font-extrabold leading-snug tracking-wide text-yellow-500">
               Your New Student Apartment, Just a Few Clicks Away
             </h4>
-            <p className="mb-8 font-sans text-lg font-medium leading-relaxed text-gray-300">
+            <p className="font-sans text-lg font-medium leading-relaxed text-gray-300">
               WiyoRent is your go-to solution for affordable student accommodation in Cameroon. Specializing in serving international students, our dedicated team ensures a seamless experience in finding the perfect home that fits your budget and lifestyle. Discover stress-free, affordable housing options with WiyoRent today!
             </p>
             <a className="inline-block" href="/list">
