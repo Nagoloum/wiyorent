@@ -1,0 +1,84 @@
+/* InfiniteScrollAnimation.css */
+.scroller {
+  overflow: hidden;
+  position: relative;
+}
+
+.scroller[data-animated='true']::before,
+.scroller[data-animated='true']::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scroller[data-animated='true']::before {
+  left: 0;
+  background: linear-gradient(to right, var(--clr-neutral-100), transparent);
+}
+
+.scroller[data-animated='true']::after {
+  right: 0;
+  background: linear-gradient(to left, var(--clr-neutral-100), transparent);
+}
+
+.scroller[data-animated='true'] .scroller__inner {
+  display: flex;
+  width: max-content;
+  animation: scroll var(--animation-duration, 40s)
+    var(--animation-direction, normal) linear infinite;
+}
+
+.scroller[data-direction='right'] {
+  --animation-direction: reverse;
+}
+
+.scroller[data-direction='left'] {
+  --animation-direction: normal;
+}
+
+.scroller[data-speed='fast'] {
+  --animation-duration: 20s;
+}
+
+.scroller[data-speed='slow'] {
+  --animation-duration: 60s;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+/* Variables de couleur */
+:root {
+  --clr-neutral-100: #fff9fa;
+  --clr-primary-100: hsl(205, 15%, 58%);
+  --clr-primary-400: hsl(215, 25%, 27%);
+  --clr-primary-800: hsl(217, 33%, 17%);
+  --clr-primary-900: hsl(218, 35%, 9%);
+}
+
+.tag-item {
+  padding: 1rem;
+  background-color: #374151;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem -0.25rem rgba(0, 0, 0, 0.75);
+  color: white;
+  font-size: 1rem;
+}
+
+.scroller img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.scroller img:hover {
+  transform: scale(1.1);
+}
