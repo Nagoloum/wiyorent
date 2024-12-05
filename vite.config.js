@@ -9,6 +9,6 @@ export default defineConfig({
     historyApiFallback: true,
   },
   build: {
-    sourcemap: true, // Active la génération des sourcemaps
+    sourcemap: false, // Active la génération des sourcemaps
   },
 })
