@@ -5,10 +5,9 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-black shadow-lg text-white px-4 py-6 lg:px-8 lg:py-6">
       <div className="container mx-auto flex flex-col lg:flex-row lg:items-center">
         <a href="/" className="flex items-center whitespace-nowrap text-2xl font-black">
-          <span className="top-0 my-0 py-0 mr-2 w-12">
+          <span className="top-0 my-0 py-0 mr-2 w-16">
             <img src="/ddc1.png" alt="" />
           </span>
-          WiyoRent
         </a>
         <input type="checkbox" className="peer hidden" id="navbar-open" />
         <label className="absolute top-6 right-5 cursor-pointer lg:hidden" htmlFor="navbar-open">
