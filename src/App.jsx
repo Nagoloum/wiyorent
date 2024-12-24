@@ -2,8 +2,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect, Suspense } from 'react';
 import Spinner from './composants/Spinner';
 import Home from './pages/Home';
-import List from './pages/List';
+import Etudiants from './pages/Appartements_etudiants';
 import Errorpage from './pages/Errorpage';
+import Other_Services from './pages/Other_Services';
+import Appartements from './pages/Appartements';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -28,7 +30,9 @@ const App = () => {
             <main>
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/list" element={<List />} />
+                <Route path="/Appartement_pour_Etudiants" element={<Etudiants />} />
+                <Route path="/Autres_services" element={<Other_Services />} />
+                <Route path="/Autres_appartements" element={<Appartements />} />
                 <Route path="*" element={<Errorpage />} /> {/* Route catch-all pour les pages non trouvées */}
               </Routes>
             </main>

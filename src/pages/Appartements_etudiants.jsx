@@ -1,16 +1,16 @@
 import React from 'react';
 import Footer from '../composants/Footer';
 import Header from '../composants/Header';
-import Filter from '../composants/Filter';
+import Etudiant_Appart from '../composants/Stud_Appart';
 
-function List() {
+function Appartements_etudiants() {
   return (
     <div>
       <Header />
-      <Filter />
+      <Etudiant_Appart />
       <Footer />
     </div>
   )
 }
 
-export default List
+export default Appartements_etudiants

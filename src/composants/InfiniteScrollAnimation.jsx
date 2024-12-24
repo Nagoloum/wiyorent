@@ -43,35 +43,49 @@ const InfiniteScrollAnimation = () => {
             Bonandjo
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Centre
+            Akwa
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Est
+            Bali
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Extreme-Nord
+            Bonapriso
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Littoral
+            Deido
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Nord
+            Bessenge
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Nord-Ouest
+            Ndokoti
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Ouest
+            New Bell
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Sud
+            Nylon
           </li>
           <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
-            Sud-Ouest
+            Madagascar
+          </li>
+          <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
+            Nkololoun
+          </li>
+          <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
+            Mboppi
+          </li>
+          <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
+            Village
+          </li>
+          <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
+            Makepe Missoke
+          </li>
+          <li className="bg-yellow-100 text-black px-4 py-2 rounded-lg shadow-lg">
+            Logbaba
           </li>
         </ul>
       </div>
-
       
       <div
         className="scroller w-full mt-8 mb-10"

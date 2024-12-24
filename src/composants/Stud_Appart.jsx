@@ -27,19 +27,19 @@ const sortOptions = [
 
 const filters = [
   {
-    id: 'region',
-    name: 'Region',
+    id: 'District',
+    name: 'District',
     options: [
-      { value: 'Adamaoua', label: 'Adamaoua' },
-      { value: 'Centre', label: 'Centre' },
-      { value: 'Est', label: 'Est' },
-      { value: 'Extrême-Nord', label: 'Extrême-Nord' },
-      { value: 'Littoral', label: 'Littoral' },
-      { value: 'Nord', label: 'Nord' },
-      { value: 'Nord-Ouest', label: 'Nord-Ouest' },
-      { value: 'Ouest', label: 'Ouest' },
-      { value: 'Sud', label: 'Sud' },
-      { value: 'Sud-Ouest', label: 'Sud-Ouest' },
+      { value: 'Bonandjo', label: 'Bonandjo' },
+      { value: 'Akwa', label: 'Akwa' },
+      { value: 'Madagascar', label: 'Madagascar' },
+      { value: 'Bessenge', label: 'Bessenge' },
+      { value: 'Deido', label: 'Deido' },
+      { value: 'Nylon', label: 'Nylon' },
+      { value: 'Ndokoti', label: 'Ndokoti' },
+      { value: 'New Bell', label: 'New Bell' },
+      { value: 'Bonapriso', label: 'Bonapriso' },
+      { value: 'Bali', label: 'Bali' },
     ],
   },
   {
@@ -64,8 +64,8 @@ const filters = [
     id: 'price',
     name: 'Price',
     options: [
-      { value: 'low', label: '-80,000 XAF' },
-      { value: 'high', label: '+80,000 XAF' },
+      { value: 'low', label: '-50,000 XAF' },
+      { value: 'high', label: '+50,000 XAF' },
     ],
   },
 ];
@@ -77,7 +77,7 @@ function classNames(...classes) {
 export default function ApartmentFilterApp() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [selectedFilters, setSelectedFilters] = useState({
-    region: [],
+    District: [],
     bathrooms: [],
     bedrooms: [],
     price: [],
@@ -91,7 +91,7 @@ export default function ApartmentFilterApp() {
       bathrooms: 2,
       bedrooms: 3,
       price: "500 000",
-      region: "Littoral",
+      District: "Deido",
       imageUrl: "/Gallery/4.jpg",
       description: "A spacious 3-bedroom flat located in the heart of the city.",
     },
@@ -101,7 +101,7 @@ export default function ApartmentFilterApp() {
       bathrooms: 1,
       bedrooms: 1,
       price: "250 000",
-      region: "Centre",
+      District: "Akwa",
       imageUrl: "/Gallery/2.jpg",
       description: "A cozy studio apartment perfect for a single occupant or couple.",
     },
@@ -111,7 +111,7 @@ export default function ApartmentFilterApp() {
       bathrooms: 3,
       bedrooms: 4,
       price: "1 200 000",
-      region: "Adamaoua",
+      District: "Bonandjo",
       imageUrl: "/Gallery/3.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
@@ -121,7 +121,7 @@ export default function ApartmentFilterApp() {
       bathrooms: 3,
       bedrooms: 3,
       price: "50 000",
-      region: "Nord-Ouest",
+      District: "Ndokoti",
       imageUrl: "/Gallery/1.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
@@ -142,16 +142,16 @@ export default function ApartmentFilterApp() {
   const filteredApartments = apartments.filter((apartment) => {
     const parsePrice = (price) => parseInt(price.replace(/\s/g, ''), 10); // Supprime les espaces et convertit en entier
 
-    const regionMatch = selectedFilters.region.length === 0 || selectedFilters.region.includes(apartment.region);
+    const DistrictMatch = selectedFilters.District.length === 0 || selectedFilters.District.includes(apartment.District);
     const bathroomsMatch = selectedFilters.bathrooms.length === 0 || selectedFilters.bathrooms.includes(apartment.bathrooms.toString());
     const bedroomsMatch = selectedFilters.bedrooms.length === 0 || selectedFilters.bedrooms.includes(apartment.bedrooms.toString());
 
     const price = parsePrice(apartment.price);
     const priceMatch = selectedFilters.price.length === 0 ||
-      (selectedFilters.price.includes('low') && price < 80000) ||
-      (selectedFilters.price.includes('high') && price >= 80000);
+      (selectedFilters.price.includes('low') && price < 50000) ||
+      (selectedFilters.price.includes('high') && price >= 50000);
 
-    return regionMatch && bathroomsMatch && bedroomsMatch && priceMatch;
+    return DistrictMatch && bathroomsMatch && bedroomsMatch && priceMatch;
   });
 
 
@@ -397,32 +397,27 @@ export default function ApartmentFilterApp() {
                           {apartment.title}
                         </h3>
                         <p className="text-lg text-gray-700 flex items-center gap-2">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth={1.5}
-                            stroke="#000"
-                            className="h-5 w-5"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                            />
+                          <svg  className="h-5 w-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" ><path d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.28 29.28 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0zm0 13.9c8.806 0 15.808 6.986 15.808 15.766c0 8.78-7.002 15.763-15.808 15.763c-8.805 0-15.81-6.982-15.81-15.763c0-8.78 7.005-15.765 15.81-15.765z" fill="#000"></path><path d="M68.913 48.908l-.048.126c.015-.038.027-.077.042-.115l.006-.011z" fill="#000"></path><path d="M63.848 73.354l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a82.552 82.552 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981z" fill="#000"></path></svg>
+                          {apartment.District}
+                        </p>
+                        <p className="mt-2 text-gray-700 flex items-center gap-2">
+                          <svg fill="#000" class="h-5 w-5 text-black group-hover:text-yellow-500 transition-all" stroke="none" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M5 10C3.347656 10 2 11.347656 2 13L2 26.8125C3.296875 25.6875 4.9375 24.777344 7 24.0625L7 20C7 17.339844 11.542969 17 15.5 17C19.457031 17 24 17.339844 24 20L24 22C24.335938 21.996094 24.65625 22 25 22C25.34375 22 25.664063 21.996094 26 22L26 20C26 17.339844 30.542969 17 34.5 17C38.457031 17 43 17.339844 43 20L43 24.03125C45.058594 24.742188 46.691406 25.671875 48 26.8125L48 13C48 11.347656 46.652344 10 45 10 Z M 25 24C5.90625 24 -0.015625 27.53125 0 37L50 37C50.015625 27.46875 44.09375 24 25 24 Z M 0 39L0 50L7 50L7 46C7 44.5625 7.5625 44 9 44L41 44C42.4375 44 43 44.5625 43 46L43 50L50 50L50 39Z" /></svg>
+
+                          {apartment.bedrooms} Bedroom(s)
+                        </p>
+                        <p className="mt-2 text-gray-700 flex items-center gap-2">
+                          <svg fill="#000"  className="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                            viewBox="0 0 211.667 211.667" xml:space="preserve">
+                            <path d="M211.667,98.551c0,2.209-1.791,4-4,4H201v26.448c0,13.403-7.085,25.178-17.702,31.792l7.999,14.878
+                            c1.046,1.946,0.317,4.371-1.629,5.418c-0.603,0.323-1.251,0.478-1.891,0.478c-1.425,0-2.804-0.764-3.526-2.106l-8.164-15.186
+                            c-3.918,1.395-8.131,2.161-12.522,2.161H48.102c-3.755,0-7.38-0.562-10.802-1.595l-7.86,14.62c-0.722,1.343-2.102,2.106-3.526,2.106
+                            c-0.64,0-1.288-0.154-1.891-0.478c-1.946-1.047-2.675-3.472-1.629-5.418l7.512-13.972c-11.465-6.406-19.239-18.659-19.239-32.699
+                            v-26.448H4c-2.209,0-4-1.791-4-4s1.791-4,4-4h10.667H197h10.667C209.876,94.551,211.667,96.342,211.667,98.551z M4,60.814h43.083
+                            c3.584,0,6.5,2.916,6.5,6.5v8.5c0,2.209,1.791,4,4,4s4-1.791,4-4v-8.5c0-7.995-6.505-14.5-14.5-14.5H4c-2.209,0-4,1.791-4,4
+                            S1.791,60.814,4,60.814z M9.25,48.602h6.833c2.209,0,4-1.791,4-4v-10.5c0-2.209-1.791-4-4-4H9.25c-5.101,0-9.25,4.149-9.25,9.25
+                            S4.149,48.602,9.25,48.602z"/>
                           </svg>
-                          {apartment.region}
-                        </p>
-                        <p className="mt-2 text-gray-700 flex items-center gap-2">
-                          {apartment.bedrooms} Bedrooms
-                        </p>
-                        <p className="mt-2 text-gray-700 flex items-center gap-2">
-                          {apartment.bathrooms} Bathrooms
+                          {apartment.bathrooms} Bathroom(s)
                         </p>
                         <p className="mt-4 text-lg font-bold text-black">
                           {apartment.price} XAF

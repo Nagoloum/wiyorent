@@ -33,7 +33,7 @@ const About = () => {
             <p className="font-sans text-lg font-medium leading-relaxed text-gray-300">
               WiyoRent is your go-to solution for affordable student accommodation in Cameroon. Specializing in serving international students, our dedicated team ensures a seamless experience in finding the perfect home that fits your budget and lifestyle. Discover stress-free, affordable housing options with WiyoRent today!
             </p>
-            <a className="inline-block" href="/list">
+            <a className="inline-block" href="/Appartement_pour_Etudiants">
               <button
                 className="flex select-none items-center gap-2 rounded-lg py-4 px-8 text-center font-sans text-sm font-bold uppercase text-yellow-400 transition-all hover:bg-yellow-400/10 active:bg-yellow-400/30 disabled:pointer-events-none disabled:opacity-50"
                 type="button"

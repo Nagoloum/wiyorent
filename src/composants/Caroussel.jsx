@@ -15,21 +15,21 @@ function Caroussel() {
              title: 'A multitude of apartments in one place according to your preferences',
               description: '',
               buttonText: 'Book now',
-              buttonLink: '/List'
+              buttonLink: '/Appartement_pour_Etudiants'
        },
         { 
             url: '/hero_img/hair1.jpg',
              title: 'Feel at home and safe',
               description: '',
                buttonText: 'Book now',
-               buttonLink: '/List'
+               buttonLink: '/Appartement_pour_Etudiants'
         },
         { 
             url: '/hero_img/hair2.jpg',
              title: 'Personalized service for each customer',
               description: '',
               buttonText: 'Book now',
-              buttonLink: '/List'
+              buttonLink: '/Appartement_pour_Etudiants'
        },
     ];
 

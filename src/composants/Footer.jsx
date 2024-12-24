@@ -17,7 +17,7 @@ function Footer() {
                 <li><a href="/#about" class=" text-white hover:text-yellow-500 duration-500 font-semibold">About Us</a></li>
                 <li><a href="/#services" class=" text-white hover:text-yellow-500 duration-500 font-semibold">Services</a></li>
                 <li><a href="/#contact" class=" text-white hover:text-yellow-500 duration-500 font-semibold">Contact</a></li>
-                <li><a href="/list" class=" text-white hover:text-yellow-500 duration-500 font-semibold">Book Now</a></li>
+                <li><a href="/Appartement_pour_Etudiants" class=" text-white hover:text-yellow-500 duration-500 font-semibold">Book Now</a></li>
             </ul>
             <div class="flex space-x-10 justify-center items-center mb-14">
               <Social />
