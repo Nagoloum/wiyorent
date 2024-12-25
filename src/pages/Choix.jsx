@@ -1,16 +1,16 @@
 import React from 'react'
 import Footer from '../composants/Footer';
 import Header from '../composants/Header';
-import Choix from '../composants/choix';
+import Choixs from '../composants/Choisir_cat'
 
-function Appartements() {
+function Choix() {
     return (
         <div>
             <Header />
-            <Choix />
+            <Choixs />
             <Footer />
         </div>
     )
 }
 
-export default Appartements
+export default Choix
