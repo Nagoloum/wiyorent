@@ -88,9 +88,9 @@ export default function ApartmentFilterApp() {
     {
       id: 1,
       title: "Beautiful 3-Bedroom Flat",
-      bathrooms: 2,
-      bedrooms: 3,
-      price: "500 000",
+      bathrooms: 1,
+      bedrooms: 1,
+      price: "50 000",
       District: "Deido",
       imageUrl: "/Gallery/4.jpg",
       description: "A spacious 3-bedroom flat located in the heart of the city.",
@@ -100,7 +100,7 @@ export default function ApartmentFilterApp() {
       title: "Modern Studio Apartment",
       bathrooms: 1,
       bedrooms: 1,
-      price: "250 000",
+      price: "40 000",
       District: "Akwa",
       imageUrl: "/Gallery/2.jpg",
       description: "A cozy studio apartment perfect for a single occupant or couple.",
@@ -108,9 +108,9 @@ export default function ApartmentFilterApp() {
     {
       id: 3,
       title: "Luxury 4-Bedroom House",
-      bathrooms: 3,
-      bedrooms: 4,
-      price: "1 200 000",
+      bathrooms: 2,
+      bedrooms: 2,
+      price: "20 000",
       District: "Bonandjo",
       imageUrl: "/Gallery/3.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
@@ -118,9 +118,9 @@ export default function ApartmentFilterApp() {
     {
       id: 4,
       title: "Luxury Bedroom House",
-      bathrooms: 3,
-      bedrooms: 3,
-      price: "50 000",
+      bathrooms: 1,
+      bedrooms: 2,
+      price: "25 000",
       District: "Ndokoti",
       imageUrl: "/Gallery/1.jpg",
       description: "A luxurious 4-bedroom house with a large garden and pool.",
@@ -420,7 +420,7 @@ export default function ApartmentFilterApp() {
                           {apartment.bathrooms} Bathroom(s)
                         </p>
                         <p className="mt-4 text-lg font-bold text-black">
-                          {apartment.price} XAF
+                          {apartment.price} XAF <span className="text-gray-400 text-base">/month</span>
                         </p>
                       </div>
                       <div className="absolute bottom-4 right-4 group">

@@ -60,7 +60,7 @@ const Navbar = () => {
             </li>
 
             <div className="lg:mr-10 flex items-center justify-center lg:mt-0">
-              <a href="/Appartement_pour_Etudiants" className="px-4 py-2 font-semibold border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition sm:min-w-[200px] min-w-[150px] text-center justify-center">
+              <a href="/Autres_Services" className="px-4 py-2 font-semibold border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition sm:min-w-[200px] min-w-[150px] text-center justify-center">
                 Book Now
               </a>
             </div>

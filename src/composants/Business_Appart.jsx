@@ -64,8 +64,8 @@ const filters = [
         id: 'price',
         name: 'Price',
         options: [
-            { value: 'low', label: '-50,000 XAF' },
-            { value: 'high', label: '+50,000 XAF' },
+            { value: 'low', label: '-100,000 XAF' },
+            { value: 'high', label: '+100,000 XAF' },
         ],
     },
 ];
@@ -90,7 +90,7 @@ export default function ApartmentFilterApp() {
             title: "Beautiful 3-Bedroom Flat",
             bathrooms: 2,
             bedrooms: 3,
-            price: "500 000",
+            price: "50 000",
             District: "Deido",
             imageUrl: "/Gallery/4.jpg",
             description: "A spacious 3-bedroom flat located in the heart of the city.",
@@ -100,7 +100,7 @@ export default function ApartmentFilterApp() {
             title: "Modern Studio Apartment",
             bathrooms: 1,
             bedrooms: 1,
-            price: "250 000",
+            price: "100 000",
             District: "Akwa",
             imageUrl: "/Gallery/2.jpg",
             description: "A cozy studio apartment perfect for a single occupant or couple.",
@@ -110,7 +110,7 @@ export default function ApartmentFilterApp() {
             title: "Luxury 4-Bedroom House",
             bathrooms: 3,
             bedrooms: 4,
-            price: "1 200 000",
+            price: "110 000",
             District: "Bonandjo",
             imageUrl: "/Gallery/3.jpg",
             description: "A luxurious 4-bedroom house with a large garden and pool.",
@@ -120,7 +120,7 @@ export default function ApartmentFilterApp() {
             title: "Luxury Bedroom House",
             bathrooms: 3,
             bedrooms: 3,
-            price: "50 000",
+            price: "80 000",
             District: "Ndokoti",
             imageUrl: "/Gallery/1.jpg",
             description: "A luxurious 4-bedroom house with a large garden and pool.",
@@ -148,8 +148,8 @@ export default function ApartmentFilterApp() {
 
         const price = parsePrice(apartment.price);
         const priceMatch = selectedFilters.price.length === 0 ||
-            (selectedFilters.price.includes('low') && price < 50000) ||
-            (selectedFilters.price.includes('high') && price >= 50000);
+            (selectedFilters.price.includes('low') && price < 100000) ||
+            (selectedFilters.price.includes('high') && price >= 100000);
 
         return DistrictMatch && bathroomsMatch && bedroomsMatch && priceMatch;
     });
@@ -420,7 +420,7 @@ export default function ApartmentFilterApp() {
                                                     {apartment.bathrooms} Bathroom(s)
                                                 </p>
                                                 <p className="mt-4 text-lg font-bold text-black">
-                                                    {apartment.price} XAF
+                                                    {apartment.price} XAF <span className="text-gray-400 text-base">/month</span>
                                                 </p>
                                             </div>
                                             <div className="absolute bottom-4 right-4 group">

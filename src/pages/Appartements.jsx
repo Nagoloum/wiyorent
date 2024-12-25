@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '../composants/Footer';
 import Header from '../composants/Header';
-import Business_Appart from '../composants/Stud_Appart';
+import Business_Appart from '../composants/Business_Appart';
 
 function Appartements() {
     return (

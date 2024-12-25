@@ -7,7 +7,7 @@ function Errorpage() {
     <div>
         <section class="">
             <Header />
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-20">
                 <div class="w-full flex-col justify-start items-center lg:gap-16 gap-10 inline-flex lg:pt-[180px] pt-12 lg:pb-28 pb-12">
                   <div class="border border-black h-[550px] rounded-lg w-full">
                     <div class="p-8 flex justify-between items-center border-b border-gray-400">
@@ -44,8 +44,8 @@ function Errorpage() {
                         <circle cx="147.131" cy="31.0854" r="1.36752" fill="#e8b208"/>
                         </svg>
                         <div class="block text-center mt-5">
-                          <h5 class="md:text-xl text-lg leading-8 text-black font-medium mb-1.5"><span class="text-yellow-600 font-semibold ">Oops!</span> It seems like you've taken a wrong turn</h5>
-                          <br></br><a href='/' class="text-lg text-gray-500 hover:text-black duration-500">Back to home page.</a>
+                          <h5 class="md:text-xl text-lg leading-8 text-black font-medium mb-1.5"><span class="text-yellow-600 font-semibold ">Oops! Wrong Page!</span> It seems like you've taken a wrong turn. This Page don't exist!</h5>
+                          <br></br><a href='/' class="text-lg text-gray-500 hover:ring-black ring-1 rounded-xl ring-white p-3 hover:text-black duration-500">Back to home page.</a>
                         </div>
                     </div>
                   </div>

@@ -3,42 +3,6 @@ import Scroll from '../composants/Scroll';
 
 import { CheckIcon } from '@heroicons/react/20/solid'
 
-const Plan = [
-  {
-    name: 'Hobby',
-    id: 'tier-hobby',
-    href: '#',
-    priceMonthly: '$29',
-    description: "The perfect plan if you're just getting started with our product.",
-    features: ['25 products',
-      'Up to 10,000 subscribers',
-      'Advanced analytics',
-      '24-hour support response time'
-    ],
-    featured: false,
-  },
-  {
-    name: 'Enterprise',
-    id: 'tier-enterprise',
-    href: '#',
-    priceMonthly: '$99',
-    description: 'Dedicated support and infrastructure for your company.',
-    features: [
-      'Unlimited products',
-      'Unlimited subscribers',
-      'Advanced analytics',
-      'Dedicated support representative',
-      'Marketing automations',
-      'Custom integrations',
-    ],
-    featured: true,
-  },
-]
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function Example() {
   return (
     <section id="services" className="pb-10 px-4">
@@ -52,13 +16,14 @@ export default function Example() {
         </div>
 
 
-        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-7xl lg:grid-cols-3 relative">
+        <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-full lg:grid-cols-3 relative">
           {/* First Card */}
           <div className="bg-white/60 rounded-3xl p-8 ring-1 ring-black sm:p-10 z-10 lg:transform lg:translate-x-8">
             <h3 className="text-yellow-600 text-base font-semibold">Student's Package</h3>
             <p className="mt-4 flex items-baseline gap-x-2">
               <span className="text-gray-500 text-base">From</span>
-              <span className="text-gray-900 text-5xl font-semibold tracking-tight">XAF30.000</span>
+              <span className="text-gray-900 text-5xl font-semibold tracking-tight">XAF25.000</span>
+              <span className="text-gray-400 text-base">/month</span>
             </p>
             <p className="text-gray-600 mt-6 text-base">
               A great choice for student.
@@ -70,11 +35,11 @@ export default function Example() {
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-600" />
-                Email support
+                Secure Environment
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-600" />
-                Weekly updates
+                up to 1 months housing deposit
               </li>
             </ul>
             <a
@@ -90,27 +55,36 @@ export default function Example() {
             <h3 className="text-yellow-400 text-base font-semibold">Business Package</h3>
             <p className="mt-4 flex items-baseline gap-x-2">
               <span className="text-gray-400 text-base">From</span>
-              <span className="text-white text-5xl font-semibold tracking-tight">XAF80.000</span>
+              <span className="text-white text-5xl font-semibold tracking-tight">XAF70.000</span>
+              <span className="text-gray-400 text-base">/month</span>
             </p>
             <p className="text-gray-300 mt-6 text-base">
-              Enjoy all the features with our business plan.
+              Enjoy great features with our business plan.
             </p>
             <ul className="mt-8 space-y-3 text-sm text-gray-300 sm:mt-10">
-              <li className="flex gap-x-3">
+            <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-400" />
-                Access to all features
+                Cheaper apartments
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-400" />
-                Priority support
+                Secure Environment
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-400" />
-                Customization options
+                up to 1 months housing deposit
+              </li>
+              <li className="flex gap-x-3">
+                <CheckIcon className="h-6 w-5 text-yellow-400" />
+                furnished apartment
+              </li>
+              <li className="flex gap-x-3">
+                <CheckIcon className="h-6 w-5 text-yellow-400" />
+                Comfortable apartment
               </li>
             </ul>
             <a
-              href="#"
+              href="/Autres_appartements"
               className="mt-8 block rounded-md relative top-0 px-3.5 py-2.5 text-center text-sm font-semibold bg-yellow-500 ring-yellow-500 ring-1 text-black hover:bg-black hover:text-yellow-500 transition border-b-2 border-yellow-500"
             >
               Explore
@@ -120,24 +94,24 @@ export default function Example() {
           {/* Third Card */}
           <div className="bg-white/60 rounded-3xl p-10 ring-1 ring-black sm:p-10 z-10 lg:transform lg:-translate-x-8 text-center">
             <h3 className="text-yellow-600 text-base font-semibold">Wiyo +</h3>
-            <p className="mt-4 flex items-baseline gap-x-3 mx-12">
+            <p className="mt-4 flex items-baseline gap-x-3 justify-center">
               <span className="text-gray-900 text-5xl font-semibold tracking-tight ">See More +</span>
             </p>
             <p className="text-gray-600 mt-6 text-base">
               Explore several other packages.
             </p>
-            <ul className="mt-8 space-y-3 text-sm text-gray-600 sm:mt-10 mx-16">
+            <ul className="mt-8 space-y-3 text-sm text-gray-600 sm:mt-10 lg:mx-24">
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-600" />
-                Access to basic features
+                Houses Rental
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-600" />
-                Email support
+                Ceremony rooms rental
               </li>
               <li className="flex gap-x-3">
                 <CheckIcon className="h-6 w-5 text-yellow-600" />
-                Weekly updates
+                Car rental and more...
               </li>
             </ul>
             <a
@@ -148,10 +122,6 @@ export default function Example() {
             </a>
           </div>
         </div>
-
-
-
-
       </div>
     </section>
   );
