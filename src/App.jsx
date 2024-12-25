@@ -6,7 +6,7 @@ import Etudiants from './pages/Appartements_etudiants';
 import Errorpage from './pages/Errorpage';
 import Other_Services from './pages/Other_Services';
 import Appartements from './pages/Appartements';
-import Choix from './pages/choix';
+import Choix from './pages/Page_Choix';
 import Car from './pages/Car_rental';
 import Catering from './pages/Catering_service';
 import Ceremony from './pages/Ceremonny_rooms';

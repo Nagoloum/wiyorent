@@ -3,7 +3,7 @@ import Footer from '../composants/Footer';
 import Header from '../composants/Header';
 import Choixs from '../composants/Choisir_cat'
 
-function Choix() {
+function Page_Choix() {
     return (
         <div>
             <Header />
@@ -13,4 +13,4 @@ function Choix() {
     )
 }
 
-export default Choix
+export default Page_Choix
