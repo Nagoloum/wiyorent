@@ -11,7 +11,7 @@ const About = () => {
       </div>
       
       {/* Content Section */}
-      <div className="flex items-center justify-center min-h-screen pt-20">
+      <div className="flex items-center justify-center min-h-[screen] pt-20">
         <div className="relative flex flex-col lg:flex-row w-full max-w-[72rem] rounded-xl bg-black text-gray-300 shadow-xl">
           {/* Image Section */}
           <div className="relative w-full lg:w-2/5 shrink-0 overflow-hidden rounded-t-xl lg:rounded-l-xl lg:rounded-r-none">
@@ -23,15 +23,15 @@ const About = () => {
           </div>
           
           {/* Text Section */}
-          <div className="p-8 flex flex-col justify-center gap-6">
+          <div className="p-8 flex flex-col min-h-[600px] justify-center gap-6">
             <h6 className="font-sans text-lg font-bold leading-relaxed tracking-wide text-white">
-              WiyoRent
+              WiyoRent Ltd
             </h6>
             <h4 className="font-sans text-3xl font-extrabold leading-snug tracking-wide text-yellow-500">
               Your New Student Apartment, Just a Few Clicks Away
             </h4>
             <p className="font-sans text-lg font-medium leading-relaxed text-gray-300">
-              WiyoRent is your go-to solution for affordable student accommodation in Cameroon. Specializing in serving international students, our dedicated team ensures a seamless experience in finding the perfect home that fits your budget and lifestyle. Discover stress-free, affordable housing options with WiyoRent today!
+              WiyoRent Ltd is a dynamic real estate startup commited to providing exceptional housing solutions and comprehensive support services for Cameroonians and foreigners with a specific light on student housing.
             </p>
             <a className="inline-block" href="/Choisir_Categorie">
               <button

@@ -20,8 +20,8 @@ export default function Example() {
           {/* First Card */}
           <div className="bg-white/60 rounded-3xl p-8 ring-1 ring-black sm:p-10 z-10 lg:transform lg:translate-x-8">
             <h3 className="text-yellow-600 text-base font-semibold">Student's Package</h3>
-            <p className="mt-4 flex items-baseline gap-x-2">
               <span className="text-gray-500 text-base">From</span>
+            <p className="flex items-baseline gap-x-2">
               <span className="text-gray-900 text-5xl font-semibold tracking-tight">XAF25.000</span>
               <span className="text-gray-400 text-base">/month</span>
             </p>
@@ -53,8 +53,8 @@ export default function Example() {
           {/* Second Card (Middle - Wider and grows) */}
           <div className="bg-black shadow-2xl rounded-3xl min-h-[500px] p-8 ring-1 ring-black sm:p-10 z-20">
             <h3 className="text-yellow-400 text-base font-semibold">Business Package</h3>
-            <p className="mt-4 flex items-baseline gap-x-2">
               <span className="text-gray-400 text-base">From</span>
+            <p className="flex items-baseline gap-x-2">
               <span className="text-white text-5xl font-semibold tracking-tight">XAF70.000</span>
               <span className="text-gray-400 text-base">/month</span>
             </p>

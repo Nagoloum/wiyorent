@@ -12,10 +12,10 @@ function Caroussel() {
         },
         { 
             url: '/hero_img/hair3.jpg',
-             title: 'A multitude of apartments in one place according to your preferences',
+             title: 'A multitude of services in one place',
               description: '',
-              buttonText: 'Book now',
-              buttonLink: '/Choisir_Categorie'
+              buttonText: 'Discover now',
+              buttonLink: '/Autres_Services'
        },
         { 
             url: '/hero_img/hair1.jpg',
@@ -28,8 +28,8 @@ function Caroussel() {
             url: '/hero_img/hair2.jpg',
              title: 'Personalized service for each customer',
               description: '',
-              buttonText: 'Book now',
-              buttonLink: '/Choisir_Categorie'
+              buttonText: 'Our services',
+              buttonLink: '/Autres_Services'
        },
     ];
 
@@ -82,7 +82,7 @@ function Caroussel() {
 
     return (
         <div
-            className="max-w-[1700px] h-[800px] w-full m-auto pt-16 px-4 relative group"
+            className="max-w-[1700px] h-[820px] w-full m-auto pt-10 px-4 relative group"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
@@ -106,12 +106,12 @@ function Caroussel() {
             </div>
 
             {/* Left arrow */}
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-10 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <ChevronLeftIcon onClick={prevSlide} className="h-10" />
             </div>
 
             {/* Right arrow */}
-            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+            <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-10 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
                 <ChevronRightIcon onClick={nextSlide} className="h-10" />
             </div>
         </div>
