@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   Dialog,
   DialogBackdrop,
@@ -75,7 +77,15 @@ function classNames(...classes) {
 }
 
 export default function ApartmentFilterApp() {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (id) => {
+    navigate(`/Appartement_pour_Etudiants/Details_appartement/${id}`);
+  };
+
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
   const [selectedFilters, setSelectedFilters] = useState({
     District: [],
     bathrooms: [],
@@ -92,7 +102,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 1,
       price: "50 000",
       District: "Deido",
-      imageUrl: "/Gallery/4.jpg",
+      imageUrl: ["/Gallery/4.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
       description: "A spacious 3-bedroom flat located in the heart of the city.",
     },
     {
@@ -102,7 +112,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 1,
       price: "40 000",
       District: "Akwa",
-      imageUrl: "/Gallery/2.jpg",
+      imageUrl: ["/Gallery/2.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
       description: "A cozy studio apartment perfect for a single occupant or couple.",
     },
     {
@@ -112,7 +122,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 2,
       price: "20 000",
       District: "Bonandjo",
-      imageUrl: "/Gallery/3.jpg",
+      imageUrl: ["/Gallery/3.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
     {
@@ -122,7 +132,7 @@ export default function ApartmentFilterApp() {
       bedrooms: 2,
       price: "25 000",
       District: "Ndokoti",
-      imageUrl: "/Gallery/1.jpg",
+      imageUrl: ["/Gallery/1.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
   ];
@@ -283,7 +293,7 @@ export default function ApartmentFilterApp() {
         <main className="mx-auto max-w-full px-4 sm:px-6 lg:px-56">
           {/* Header Section */}
           <div className="flex flex-wrap items-baseline justify-between border-b border-gray-200 pb-6 pt-10">
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">Rent Out a Flat</h1>
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight text-gray-900">Rent Out a Student's Flat</h1>
 
             <div className="flex items-center mt-4 sm:mt-0">
               <Menu as="div" className="relative inline-block text-left">
@@ -385,9 +395,10 @@ export default function ApartmentFilterApp() {
                       key={apartment.id}
                       className="group relative bg-white border border-gray-200 rounded-lg hover:shadow-2xl shadow-lg transition-shadow duration-300"
                     >
+
                       <div className="w-full h-64 bg-gray-200">
                         <img
-                          src={apartment.imageUrl}
+                          src={apartment.imageUrl[0]}
                           alt={apartment.title}
                           className="object-cover w-full h-full rounded-t-lg"
                         />
@@ -397,7 +408,7 @@ export default function ApartmentFilterApp() {
                           {apartment.title}
                         </h3>
                         <p className="text-lg text-gray-700 flex items-center gap-2">
-                          <svg  className="h-5 w-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" ><path d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.28 29.28 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0zm0 13.9c8.806 0 15.808 6.986 15.808 15.766c0 8.78-7.002 15.763-15.808 15.763c-8.805 0-15.81-6.982-15.81-15.763c0-8.78 7.005-15.765 15.81-15.765z" fill="#000"></path><path d="M68.913 48.908l-.048.126c.015-.038.027-.077.042-.115l.006-.011z" fill="#000"></path><path d="M63.848 73.354l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a82.552 82.552 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981z" fill="#000"></path></svg>
+                          <svg className="h-5 w-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" ><path d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.28 29.28 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0zm0 13.9c8.806 0 15.808 6.986 15.808 15.766c0 8.78-7.002 15.763-15.808 15.763c-8.805 0-15.81-6.982-15.81-15.763c0-8.78 7.005-15.765 15.81-15.765z" fill="#000"></path><path d="M68.913 48.908l-.048.126c.015-.038.027-.077.042-.115l.006-.011z" fill="#000"></path><path d="M63.848 73.354l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a82.552 82.552 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981z" fill="#000"></path></svg>
                           {apartment.District}
                         </p>
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
@@ -406,7 +417,7 @@ export default function ApartmentFilterApp() {
                           {apartment.bedrooms} Bedroom(s)
                         </p>
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
-                          <svg fill="#000"  className="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                          <svg fill="#000" className="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 211.667 211.667" xml:space="preserve">
                             <path d="M211.667,98.551c0,2.209-1.791,4-4,4H201v26.448c0,13.403-7.085,25.178-17.702,31.792l7.999,14.878
                             c1.046,1.946,0.317,4.371-1.629,5.418c-0.603,0.323-1.251,0.478-1.891,0.478c-1.425,0-2.804-0.764-3.526-2.106l-8.164-15.186
@@ -425,17 +436,18 @@ export default function ApartmentFilterApp() {
                       </div>
                       <div className="absolute bottom-4 right-4 group">
                         <a
-                          href="#"
-                          className="relative flex items-center justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
+                          onClick={() => handleNavigate(apartment.id)}
+                          className="relative flex items-center cursor-pointer justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
                         >
-                          <div className="absolute w-16 h-8 border-t-4 border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
+                          <div className="absolute w-16 h-8 border-t-4 cursor-pointer border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="h-5 w-5 text-gray-400 cursor-pointer group-hover:text-black transition-colors"
+                            className="h-5 w-5 text-gray-400 group-hover:text-black transition-colors"
+                            cursor-pointer
                           >
                             <path
                               strokeLinecap="round"

@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full z-40 backdrop-blur-lg bg-black shadow-lg text-white px-4 py-6 lg:px-8 lg:py-6">
       <div className="container mx-auto flex flex-col lg:flex-row lg:items-center">
-        <a href="/" className="flex items-center whitespace-nowrap text-2xl font-black">
+        <a href="/" className="flex items-center whitespace-nowrap text-2xl font-black max-w-20">
           <span className="top-0 my-0 py-0 mr-2 w-16">
             <img src="/ddc1.png" alt="logo" />
           </span>

@@ -13,6 +13,50 @@ import Ceremony from './pages/Ceremonny_rooms';
 import Deco from './pages/Decoration_service';
 import House from './pages/House_rental';
 import Restau from './pages/Restaurant_reservation';
+import AppartementsDetails from './pages/AppartementsDetails';
+
+const apartments = [
+  {
+    id: 1,
+    title: "Beautiful 3-Bedroom Flat",
+    bathrooms: 1,
+    bedrooms: 1,
+    price: "50 000",
+    District: "Deido",
+    imageUrl: ["/Gallery/4.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A spacious 3-bedroom flat located in the heart of the city.",
+  },
+  {
+    id: 2,
+    title: "Modern Studio Apartment",
+    bathrooms: 1,
+    bedrooms: 1,
+    price: "40 000",
+    District: "Akwa",
+    imageUrl: ["/Gallery/2.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A cozy studio apartment perfect for a single occupant or couple.",
+  },
+  {
+    id: 3,
+    title: "Luxury 4-Bedroom House",
+    bathrooms: 2,
+    bedrooms: 2,
+    price: "20 000",
+    District: "Bonandjo",
+    imageUrl: ["/Gallery/3.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
+  {
+    id: 4,
+    title: "Luxury Bedroom House",
+    bathrooms: 1,
+    bedrooms: 2,
+    price: "25 000",
+    District: "Ndokoti",
+    imageUrl: ["/Gallery/1.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
+];
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -47,6 +91,7 @@ const App = () => {
                 <Route path="/Refaire_ma_deco" element={<Deco />} />
                 <Route path="/Louer_une_maison" element={<House />} />
                 <Route path="/Reserver_un_restaurant" element={<Restau />} />
+                <Route path="/Appartement_pour_Etudiants/Details_appartement/:id" element={<AppartementsDetails />} />
                 <Route path="*" element={<Errorpage />} /> {/* Route catch-all pour les pages non trouvées */}
               </Routes>
             </main>

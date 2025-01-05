@@ -54,7 +54,7 @@ function Listing_services() {
         </a>
 
         <a href="Refaire_ma_deco" class="relative group w-full h-96">
-          <img src="/Gallery/4.jpg" alt="Image 4" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition duration-500" />
+          <img src="/Gallery/deco/deco.jpg" alt="Image 4" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition duration-500" />
           <div class="absolute inset-0 flex items-center justify-center rounded-xl bg-black bg-opacity-70 text-white text-2xl sm:text-3xl font-semibold group-hover:bg-opacity-30 transition duration-500">
             <p class="drop-shadow-md text-center">Decoration service</p>
           </div>

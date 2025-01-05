@@ -459,7 +459,7 @@ export default function CeremonyFilterApp() {
                       </div>
                       <div className="absolute bottom-4 right-4 group">
                         <a
-                          href="#"
+                          onClick={() => navigate(`/Details_ceremony_rooms/${apartment.id}`)}
                           className="relative flex items-center justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
                         >
                           <div className="absolute w-16 h-8 border-t-4 border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
