@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import {
   Dialog,
   DialogBackdrop,
@@ -17,12 +19,75 @@ import { XMarkIcon } from '@heroicons/react/24/outline';
 import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from '@heroicons/react/20/solid';
 
 const sortOptions = [
-  { name: 'Bathrooms: Low to High', value: 'bathroomsAsc' },
-  { name: 'Bathrooms: High to Low', value: 'bathroomsDesc' },
-  { name: 'Bedrooms: Low to High', value: 'bedroomsAsc' },
-  { name: 'Bedrooms: High to Low', value: 'bedroomsDesc' },
+  { name: 'Places: Low to High', value: 'placesAsc' },
+  { name: 'Places: High to Low', value: 'placesDesc' },
+  { name: 'Surface: Low to High', value: 'surfaceAsc' },
+  { name: 'Surface: High to Low', value: 'surfaceDesc' },
   { name: 'Price: Low to High', value: 'priceAsc' },
   { name: 'Price: High to Low', value: 'priceDesc' },
+];
+
+export const Ceremonyy = [
+  {
+    id: 1,
+    title: "Beautiful 3-Bedroom Flat",
+    type: "ceremony",
+    surface: 70,
+    place: 100,
+    sonorisation: "yes",
+    wifi: "yes",
+    decoration: "customizable",
+    nettoyage: "included",
+    price: "100 000",
+    District: "Deido",
+    imageUrl: ["/Gallery/salle_fete/f1.jpg", "/Gallery/salle_fete/f2.jpg", "/Gallery/salle_fete/f3.jpg"],
+    description: "A spacious 3-bedroom flat located in the heart of the city.",
+  },
+  {
+    id: 2,
+    title: "Modern Studio Apartment",
+    type: "ceremony",
+    surface: 150,
+    place: 200,
+    sonorisation: "yes",
+    wifi: "yes",
+    decoration: "customizable",
+    nettoyage: "included",
+    price: "350 000",
+    District: "Akwa",
+    imageUrl: ["/Gallery/salle_fete/f4.jpg", "/Gallery/salle_fete/f5.jpg", "/Gallery/salle_fete/f6.jpg"],
+    description: "A cozy studio apartment perfect for a single occupant or couple.",
+  },
+  {
+    id: 3,
+    title: "Luxury 4-Bedroom House",
+    type: "ceremony",
+    surface: 200,
+    place: 210,
+    sonorisation: "yes",
+    wifi: "yes",
+    decoration: "customizable",
+    nettoyage: "included",
+    price: "250 000",
+    District: "Bonandjo",
+    imageUrl: ["/Gallery/salle_fete/f7.jpg", "/Gallery/salle_fete/f1.jpg", "/Gallery/salle_fete/f2.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
+  {
+    id: 4,
+    title: "Luxury Bedroom House",
+    type: "ceremony",
+    surface: 50,
+    place: 100,
+    sonorisation: "yes",
+    wifi: "yes",
+    decoration: "customizable",
+    nettoyage: "included",
+    price: "90 000",
+    District: "Ndokoti",
+    imageUrl: ["/Gallery/salle_fete/f3.jpg", "/Gallery/salle_fete/f4.jpg", "/Gallery/salle_fete/f5.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
 ];
 
 const filters = [
@@ -42,34 +107,29 @@ const filters = [
       { value: 'Bali', label: 'Bali' },
     ],
   },
+
   {
-    id: 'bathrooms',
-    name: 'Bathrooms',
+    id: 'surface',
+    name: 'Ceremony Room Area',
     options: [
-      { value: '1', label: '1' },
-      { value: '2', label: '2' },
-      { value: '3', label: '3' },
-      { value: '4', label: '4' },
-      { value: '5', label: '5' },
+      { value: 'lowsur', label: '-100m²' },
+      { value: 'highsur', label: '+100m²' },
     ],
   },
   {
-    id: 'bedrooms',
-    name: 'Bedrooms',
+    id: 'places',
+    name: 'Ceremony Room Places',
     options: [
-      { value: '1', label: '1' },
-      { value: '2', label: '2' },
-      { value: '3', label: '3' },
-      { value: '4', label: '4' },
-      { value: '5', label: '5' },
+      { value: 'lowpla', label: '-200 places' },
+      { value: 'highpla', label: '+200 places' },
     ],
   },
   {
     id: 'price',
     name: 'Price',
     options: [
-      { value: 'low', label: '-150,000 XAF' },
-      { value: 'high', label: '+150,000 XAF' },
+      { value: 'low', label: '-200,000 XAF' },
+      { value: 'high', label: '+200,000 XAF' },
     ],
   },
 ];
@@ -78,85 +138,83 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-export default function CeremonyFilterApp() {
+export default function ceremonyFilterApp() {
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (type, id) => {
+    navigate(`/Details/${type}/${id}`);
+  };
+
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+
   const [selectedFilters, setSelectedFilters] = useState({
     District: [],
-    bathrooms: [],
-    bedrooms: [],
+    surface: [],
+    places: [],
     price: [],
   });
   const [sortOption, setSortOption] = useState(null);
 
-  const apartments = [
+  const Ceremonyy = [
     {
       id: 1,
       title: "Beautiful 3-Bedroom Flat",
-      bathrooms: 1,
-      bedrooms: 1,
-      price: "350 000",
+      type: "ceremony",
+      surface: 70,
+      place: 100,
+      sonorisation: "yes",
+      wifi: "yes",
+      decoration: "customizable",
+      nettoyage: "included",
+      price: "100 000",
       District: "Deido",
-      imageUrl: "/Gallery/salle_fete/f4.jpg",
+      imageUrl: ["/Gallery/salle_fete/f1.jpg", "/Gallery/salle_fete/f2.jpg", "/Gallery/salle_fete/f3.jpg"],
       description: "A spacious 3-bedroom flat located in the heart of the city.",
     },
     {
       id: 2,
       title: "Modern Studio Apartment",
-      bathrooms: 1,
-      bedrooms: 1,
-      price: "300 000",
+      type: "ceremony",
+      surface: 150,
+      place: 200,
+      sonorisation: "yes",
+      wifi: "yes",
+      decoration: "customizable",
+      nettoyage: "included",
+      price: "350 000",
       District: "Akwa",
-      imageUrl: "/Gallery/salle_fete/f2.jpg",
+      imageUrl: ["/Gallery/salle_fete/f4.jpg", "/Gallerysalle_fete/f5.jpg", "/Gallery/salle_fete/f6.jpg"],
       description: "A cozy studio apartment perfect for a single occupant or couple.",
     },
     {
       id: 3,
       title: "Luxury 4-Bedroom House",
-      bathrooms: 2,
-      bedrooms: 2,
-      price: "300 000",
+      type: "ceremony",
+      surface: 200,
+      place: 210,
+      sonorisation: "yes",
+      wifi: "yes",
+      decoration: "customizable",
+      nettoyage: "included",
+      price: "250 000",
       District: "Bonandjo",
-      imageUrl: "/Gallery/salle_fete/f3.jpg",
+      imageUrl: ["/Gallery/salle_fete/f7.jpg", "/Gallery/salle_fete/f1.jpg", "/Gallery/salle_fete/f2.jpg"],
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
     {
       id: 4,
       title: "Luxury Bedroom House",
-      bathrooms: 1,
-      bedrooms: 2,
-      price: "100 000",
+      type: "ceremony",
+      surface: 50,
+      place: 100,
+      sonorisation: "yes",
+      wifi: "yes",
+      decoration: "customizable",
+      nettoyage: "included",
+      price: "90 000",
       District: "Ndokoti",
-      imageUrl: "/Gallery/salle_fete/f1.jpg",
-      description: "A luxurious 4-bedroom house with a large garden and pool.",
-    },
-    {
-      id: 5,
-      title: "Luxury Bedroom House",
-      bathrooms: 1,
-      bedrooms: 2,
-      price: "250 000",
-      District: "Bessenge",
-      imageUrl: "/Gallery/salle_fete/f5.jpg",
-      description: "A luxurious 4-bedroom house with a large garden and pool.",
-    },
-    {
-      id: 6,
-      title: "Luxury Bedroom House",
-      bathrooms: 1,
-      bedrooms: 2,
-      price: "200 000",
-      District: "New Bell",
-      imageUrl: "/Gallery/salle_fete/f6.jpg",
-      description: "A luxurious 4-bedroom house with a large garden and pool.",
-    },
-    {
-      id: 7,
-      title: "Luxury Bedroom House",
-      bathrooms: 1,
-      bedrooms: 2,
-      price: "250 000",
-      District: "Nylon",
-      imageUrl: "/Gallery/salle_fete/f7.jpg",
+      imageUrl: ["/Gallery/salle_fete/f3.jpg", "/Gallery/salle_fete/f4.jpg", "/Gallery/salle_fete/f5.jpg"],
       description: "A luxurious 4-bedroom house with a large garden and pool.",
     },
   ];
@@ -173,23 +231,33 @@ export default function CeremonyFilterApp() {
     });
   };
 
-  const filteredApartments = apartments.filter((apartment) => {
+  const filteredceremony = Ceremonyy.filter((ceremony) => {
     const parsePrice = (price) => parseInt(price.replace(/\s/g, ''), 10); // Supprime les espaces et convertit en entier
 
-    const DistrictMatch = selectedFilters.District.length === 0 || selectedFilters.District.includes(apartment.District);
-    const bathroomsMatch = selectedFilters.bathrooms.length === 0 || selectedFilters.bathrooms.includes(apartment.bathrooms.toString());
-    const bedroomsMatch = selectedFilters.bedrooms.length === 0 || selectedFilters.bedrooms.includes(apartment.bedrooms.toString());
+    const DistrictMatch = selectedFilters.District.length === 0 || selectedFilters.District.includes(ceremony.District);
 
-    const price = parsePrice(apartment.price);
+    const price = parsePrice(ceremony.price);
+    const places = ceremony.place;
+    const surface = ceremony.surface;
+
+    const placesMatch = selectedFilters.places.length === 0 ||
+      (selectedFilters.places.includes('lowpla') && places < 200) ||
+      (selectedFilters.places.includes('highpla') && places >= 200);
+
+    const surfaceMatch = selectedFilters.surface.length === 0 ||
+      (selectedFilters.surface.includes('lowsur') && surface < 100) ||
+      (selectedFilters.surface.includes('highsur') && surface >= 100);
+
     const priceMatch = selectedFilters.price.length === 0 ||
-      (selectedFilters.price.includes('low') && price < 150000) ||
-      (selectedFilters.price.includes('high') && price >= 150000);
+      (selectedFilters.price.includes('low') && price < 200000) ||
+      (selectedFilters.price.includes('high') && price >= 200000);
 
-    return DistrictMatch && bathroomsMatch && bedroomsMatch && priceMatch;
+
+    return DistrictMatch && placesMatch && surfaceMatch && priceMatch;
   });
 
 
-  const sortedApartments = [...filteredApartments].sort((a, b) => {
+  const sortedceremony = [...filteredceremony].sort((a, b) => {
     if (!sortOption) return 0;
 
     const parsePrice = (price) => {
@@ -197,14 +265,14 @@ export default function CeremonyFilterApp() {
     };
 
     switch (sortOption) {
-      case 'bathroomsAsc':
-        return a.bathrooms - b.bathrooms;
-      case 'bathroomsDesc':
-        return b.bathrooms - a.bathrooms;
-      case 'bedroomsAsc':
-        return a.bedrooms - b.bedrooms;
-      case 'bedroomsDesc':
-        return b.bedrooms - a.bedrooms;
+      case 'placesAsc':
+        return a.place - b.place;
+      case 'placesDesc':
+        return b.place - a.place;
+      case 'surfaceAsc':
+        return a.surface - b.surface;
+      case 'surfaceDesc':
+        return b.surface - a.surface;
       case 'priceAsc':
         return parsePrice(a.price) - parsePrice(b.price);
       case 'priceDesc':
@@ -414,33 +482,34 @@ export default function CeremonyFilterApp() {
               {/* Product Grid */}
               <div className="lg:col-span-3">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {sortedApartments.map((apartment) => (
+                  {sortedceremony.map((ceremony) => (
                     <div
-                      key={apartment.id}
+                      key={ceremony.id}
                       className="group relative bg-white border border-gray-200 rounded-lg hover:shadow-2xl shadow-lg transition-shadow duration-300"
                     >
+
                       <div className="w-full h-64 bg-gray-200">
                         <img
-                          src={apartment.imageUrl}
-                          alt={apartment.title}
+                          src={ceremony.imageUrl[0]}
+                          alt={ceremony.title}
                           className="object-cover w-full h-full rounded-t-lg"
                         />
                       </div>
                       <div className="p-4">
                         <h3 className="text-lg font-semibold text-gray-900">
-                          {apartment.title}
+                          {ceremony.title}
                         </h3>
                         <p className="text-lg text-gray-700 flex items-center gap-2">
-                          <svg  className="h-5 w-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" ><path d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.28 29.28 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0zm0 13.9c8.806 0 15.808 6.986 15.808 15.766c0 8.78-7.002 15.763-15.808 15.763c-8.805 0-15.81-6.982-15.81-15.763c0-8.78 7.005-15.765 15.81-15.765z" fill="#000"></path><path d="M68.913 48.908l-.048.126c.015-.038.027-.077.042-.115l.006-.011z" fill="#000"></path><path d="M63.848 73.354l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a82.552 82.552 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981z" fill="#000"></path></svg>
-                          {apartment.District}
+                          <svg className="h-5 w-5" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" ><path d="M50.001 0C33.65 0 20.25 13.36 20.25 29.666c0 6.318 2.018 12.19 5.433 17.016L46.37 82.445c2.897 3.785 4.823 3.066 7.232-.2l22.818-38.83c.46-.834.822-1.722 1.137-2.629a29.28 29.28 0 0 0 2.192-11.12C79.75 13.36 66.354 0 50.001 0zm0 13.9c8.806 0 15.808 6.986 15.808 15.766c0 8.78-7.002 15.763-15.808 15.763c-8.805 0-15.81-6.982-15.81-15.763c0-8.78 7.005-15.765 15.81-15.765z" fill="#000"></path><path d="M68.913 48.908l-.048.126c.015-.038.027-.077.042-.115l.006-.011z" fill="#000"></path><path d="M63.848 73.354l-1.383 1.71c1.87.226 3.68.491 5.375.812l-5.479 1.623l7.313 1.945l5.451-1.719c3.348 1.123 7.984 2.496 9.52 4.057h-10.93l1.086 3.176h11.342c-.034 1.79-3.234 3.244-6.29 4.422l-7.751-1.676l-7.303 2.617l7.8 1.78c-4.554 1.24-12.2 1.994-18.53 2.341l-.266-3.64h-7.606l-.267 3.64c-6.33-.347-13.975-1.1-18.53-2.34l7.801-1.781l-7.303-2.617l-7.752 1.676c-3.012-.915-6.255-2.632-6.289-4.422H25.2l1.086-3.176h-10.93c1.536-1.561 6.172-2.934 9.52-4.057l5.451 1.719l7.313-1.945l-5.479-1.623a82.552 82.552 0 0 1 5.336-.807l-1.363-1.713c-14.785 1.537-27.073 4.81-30.295 9.979C.7 91.573 19.658 99.86 49.37 99.989c.442.022.878.006 1.29 0c29.695-.136 48.636-8.42 43.501-16.654c-3.224-5.171-15.52-8.445-30.314-9.981z" fill="#000"></path></svg>
+                          {ceremony.District}
                         </p>
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
                           <svg fill="#000" class="h-5 w-5 text-black group-hover:text-yellow-500 transition-all" stroke="none" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M5 10C3.347656 10 2 11.347656 2 13L2 26.8125C3.296875 25.6875 4.9375 24.777344 7 24.0625L7 20C7 17.339844 11.542969 17 15.5 17C19.457031 17 24 17.339844 24 20L24 22C24.335938 21.996094 24.65625 22 25 22C25.34375 22 25.664063 21.996094 26 22L26 20C26 17.339844 30.542969 17 34.5 17C38.457031 17 43 17.339844 43 20L43 24.03125C45.058594 24.742188 46.691406 25.671875 48 26.8125L48 13C48 11.347656 46.652344 10 45 10 Z M 25 24C5.90625 24 -0.015625 27.53125 0 37L50 37C50.015625 27.46875 44.09375 24 25 24 Z M 0 39L0 50L7 50L7 46C7 44.5625 7.5625 44 9 44L41 44C42.4375 44 43 44.5625 43 46L43 50L50 50L50 39Z" /></svg>
 
-                          {apartment.bedrooms} Bedroom(s)
+                          {ceremony.surface}m²
                         </p>
                         <p className="mt-2 text-gray-700 flex items-center gap-2">
-                          <svg fill="#000"  className="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                          <svg fill="#000" className="h-5 w-5" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                             viewBox="0 0 211.667 211.667" xml:space="preserve">
                             <path d="M211.667,98.551c0,2.209-1.791,4-4,4H201v26.448c0,13.403-7.085,25.178-17.702,31.792l7.999,14.878
                             c1.046,1.946,0.317,4.371-1.629,5.418c-0.603,0.323-1.251,0.478-1.891,0.478c-1.425,0-2.804-0.764-3.526-2.106l-8.164-15.186
@@ -451,25 +520,26 @@ export default function CeremonyFilterApp() {
                             S1.791,60.814,4,60.814z M9.25,48.602h6.833c2.209,0,4-1.791,4-4v-10.5c0-2.209-1.791-4-4-4H9.25c-5.101,0-9.25,4.149-9.25,9.25
                             S4.149,48.602,9.25,48.602z"/>
                           </svg>
-                          {apartment.bathrooms} Bathroom(s)
+                          {ceremony.place} Place(s)
                         </p>
                         <p className="mt-4 text-lg font-bold text-black">
-                          {apartment.price} XAF
+                          {ceremony.price} XAF <span className="text-gray-400 text-base">/day</span>
                         </p>
                       </div>
                       <div className="absolute bottom-4 right-4 group">
                         <a
-                          onClick={() => navigate(`/Details_ceremony_rooms/${apartment.id}`)}
-                          className="relative flex items-center justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
+                          onClick={() => handleNavigate(ceremony.type, ceremony.id)}
+                          className="relative flex items-center cursor-pointer justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
                         >
-                          <div className="absolute w-16 h-8 border-t-4 border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
+                          <div className="absolute w-16 h-8 border-t-4 cursor-pointer border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             strokeWidth={1.5}
                             stroke="currentColor"
-                            className="h-5 w-5 text-gray-400 cursor-pointer group-hover:text-black transition-colors"
+                            className="h-5 w-5 text-gray-400 group-hover:text-black transition-colors"
+                            cursor-pointer
                           >
                             <path
                               strokeLinecap="round"

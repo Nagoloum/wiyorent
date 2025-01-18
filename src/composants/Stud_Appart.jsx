@@ -27,6 +27,53 @@ const sortOptions = [
   { name: 'Price: High to Low', value: 'priceDesc' },
 ];
 
+export const apartments = [
+  {
+    id: 1,
+    title: "Beautiful 3-Bedroom Flat",
+    type: "Appartements_etudiants",
+    bathrooms: 1,
+    bedrooms: 1,
+    price: "50 000",
+    District: "Deido",
+    imageUrl: ["/Gallery/4.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A spacious 3-bedroom flat located in the heart of the city.",
+  },
+  {
+    id: 2,
+    title: "Modern Studio Apartment",
+    type: "Appartements_etudiants",
+    bathrooms: 1,
+    bedrooms: 1,
+    price: "40 000",
+    District: "Akwa",
+    imageUrl: ["/Gallery/2.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A cozy studio apartment perfect for a single occupant or couple.",
+  },
+  {
+    id: 3,
+    title: "Luxury 4-Bedroom House",
+    type: "Appartements_etudiants",
+    bathrooms: 2,
+    bedrooms: 2,
+    price: "20 000",
+    District: "Bonandjo",
+    imageUrl: ["/Gallery/3.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
+  {
+    id: 4,
+    title: "Luxury Bedroom House",
+    type: "Appartements_etudiants",
+    bathrooms: 1,
+    bedrooms: 2,
+    price: "25 000",
+    District: "Ndokoti",
+    imageUrl: ["/Gallery/1.jpg", "/Gallery/5.jpg", "/Gallery/6.jpg"],
+    description: "A luxurious 4-bedroom house with a large garden and pool.",
+  },
+];
+
 const filters = [
   {
     id: 'District',
@@ -80,8 +127,8 @@ export default function ApartmentFilterApp() {
 
   const navigate = useNavigate();
 
-  const handleNavigate = (id) => {
-    navigate(`/Appartement_pour_Etudiants/Details_appartement/${id}`);
+  const handleNavigate = (type, id) => {
+    navigate(`/Details/${type}/${id}`);
   };
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
@@ -98,6 +145,7 @@ export default function ApartmentFilterApp() {
     {
       id: 1,
       title: "Beautiful 3-Bedroom Flat",
+      type: "Appartements_etudiants",
       bathrooms: 1,
       bedrooms: 1,
       price: "50 000",
@@ -108,6 +156,7 @@ export default function ApartmentFilterApp() {
     {
       id: 2,
       title: "Modern Studio Apartment",
+      type: "Appartements_etudiants",
       bathrooms: 1,
       bedrooms: 1,
       price: "40 000",
@@ -118,6 +167,7 @@ export default function ApartmentFilterApp() {
     {
       id: 3,
       title: "Luxury 4-Bedroom House",
+      type: "Appartements_etudiants",
       bathrooms: 2,
       bedrooms: 2,
       price: "20 000",
@@ -128,6 +178,7 @@ export default function ApartmentFilterApp() {
     {
       id: 4,
       title: "Luxury Bedroom House",
+      type: "Appartements_etudiants",
       bathrooms: 1,
       bedrooms: 2,
       price: "25 000",
@@ -436,7 +487,7 @@ export default function ApartmentFilterApp() {
                       </div>
                       <div className="absolute bottom-4 right-4 group">
                         <a
-                          onClick={() => handleNavigate(apartment.id)}
+                          onClick={() => handleNavigate(apartment.type, apartment.id)}
                           className="relative flex items-center cursor-pointer justify-center w-10 h-10 group-hover:bg-yellow-500 rounded-full transition-all duration-500"
                         >
                           <div className="absolute w-16 h-8 border-t-4 cursor-pointer border-yellow-500 rounded-full -top-3 group-hover:scale-100 scale-0 transition-transform duration-500"></div>
