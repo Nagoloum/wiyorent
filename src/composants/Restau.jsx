@@ -80,7 +80,7 @@ const filters = [
 
   {
     id: 'surface',
-    name: 'restau Room Area',
+    name: 'Restaurant Room Area',
     options: [
       { value: 'lowsur', label: '-100m²' },
       { value: 'highsur', label: '+100m²' },
@@ -88,7 +88,7 @@ const filters = [
   },
   {
     id: 'places',
-    name: 'restau Room Places',
+    name: 'Restaurant Room Places',
     options: [
       { value: 'lowpla', label: '-200 places' },
       { value: 'highpla', label: '+200 places' },
