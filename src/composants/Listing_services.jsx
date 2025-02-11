@@ -39,7 +39,7 @@ function Listing_services() {
           </div>
         </a>
 
-        <a href="/Reserver_un_restaurant" class="relative group w-full h-96">
+        {/* <a href="/Reserver_un_restaurant" class="relative group w-full h-96">
           <img src="/Gallery/restaurant/restau.jpg" alt="Image 4" class="w-full h-full object-cover rounded-xl grayscale group-hover:grayscale-0 transition duration-500" />
           <div class="absolute inset-0 flex items-center justify-center rounded-xl bg-black bg-opacity-70 text-white text-2xl sm:text-3xl font-semibold group-hover:bg-opacity-30 transition duration-500">
             <p class="drop-shadow-md text-center">Restauration reservation</p>
@@ -58,7 +58,7 @@ function Listing_services() {
           <div class="absolute inset-0 flex items-center justify-center rounded-xl bg-black bg-opacity-70 text-white text-2xl sm:text-3xl font-semibold group-hover:bg-opacity-30 transition duration-500">
             <p class="drop-shadow-md text-center">Decoration service</p>
           </div>
-        </a>
+        </a> */}
 
       </div>
     </section>
