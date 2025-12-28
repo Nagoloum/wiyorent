@@ -80,7 +80,7 @@ function Example() {
                 </div>
               </div>
 
-              <form action="tel:+237698408048" className="mt-10">
+              <form action="tel:+33769477997" className="mt-10">
                 <button
                   type="submit"
                   className="mt-10 lg:mt-6 flex w-full items-center justify-center border-transparent px-8 py-3 text-base font-medium focus:outline-none border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition"
@@ -173,7 +173,7 @@ function Example() {
                 </div>
               </div>
 
-              <form action="tel:+237698408048" className="mt-10">
+              <form action="tel:+33769477997" className="mt-10">
                 <button
                   type="submit"
                   className="mt-10 lg:mt-6 flex w-full items-center justify-center border-transparent px-8 py-3 text-base font-medium focus:outline-none border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition"
@@ -306,7 +306,7 @@ function Example() {
                 </div>
               </div>
 
-              <form action="tel:+237698408048" className="mt-10">
+              <form action="tel:+33769477997" className="mt-10">
                 <button
                   type="submit"
                   className="mt-10 lg:mt-6 flex w-full items-center justify-center border-transparent px-8 py-3 text-base font-medium focus:outline-none border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition"
@@ -458,7 +458,7 @@ function Example() {
                 </div>
               </div>
 
-              <form action="tel:+237698408048" className="mt-10">
+              <form action="tel:+33769477997" className="mt-10">
                 <button
                   type="submit"
                   className="mt-10 lg:mt-6 flex w-full items-center justify-center border-transparent px-8 py-3 text-base font-medium focus:outline-none border border-yellow-500 bg-yellow-500 text-black rounded-lg hover:bg-black hover:text-yellow-500 transition"
